@@ -1,0 +1,37 @@
+﻿@model MVCAssignment.Models.SearchKey
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Search", "Tweet")) {
+    @Html.ValidationSummary(true)
+    <div>
+        <fieldset>
+        <legend>Tweet</legend>
+            
+        <div class="editor-label">
+            Search Key Word
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SearchKeyWord)
+            
+        </div>
+
+       
+
+        <p>
+            <input type="submit" value="Search and Save" />
+
+        </p>
+    </fieldset>
+
+    </div>
+}
+

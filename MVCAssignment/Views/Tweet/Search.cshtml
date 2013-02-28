@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Core.Domain.Tweet>
+
+@{
+    ViewBag.Title = "Twitter search results";
+}
+<style type="text/css">
+.tweet_content
+{
+    font-weight:bold;
+}
+.tweet_posted
+{
+    font-style:italic;
+}
+</style>
+<br />
+<br />
+<br />
+<br />
+<ul>
+@foreach (var tweet in Model)
+{
+    <li>
+        <div>
+            <span class="tweet_author">Tweet from @tweet.Author:</span>
+            <span class="tweet_content">@tweet.Text</span>
+            <span class="tweet_posted">at @tweet.Time.ToString()</span>
+        </div>
+    </li>
+}
+</ul>

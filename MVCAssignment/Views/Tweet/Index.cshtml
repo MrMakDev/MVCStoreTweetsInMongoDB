@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Core.Domain.Tweet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+   
+</p>
+<table>
+    <tr>
+        <th>
+            Text
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Time
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+       
+    </tr>
+}
+
+</table>
